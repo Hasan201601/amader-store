@@ -3,7 +3,6 @@ import { Container, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
 
 const Shop = ({ products, handleAddToCart }) => {
-
     return (
         <div>
             <Container className="my-4">

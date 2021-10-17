@@ -4,6 +4,7 @@ import { addToDb, getDb } from "../../LocalStorage/LocalStorage";
 const useProducts = () => {
 
     const [products, setProducts] = useState([]);
+    const [displayProducts, setDisplayProducts] = useState([]);
     const [cart, setCart] = useState([])
 
 
@@ -11,7 +12,10 @@ const useProducts = () => {
         const url = "./products.JSON"
         fetch(url)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data);
+                setDisplayProducts(data);
+            })
     }, [])
     useEffect(() => {
         if (products.length) {
@@ -51,7 +55,9 @@ const useProducts = () => {
         setCart,
         handleAddToCart,
         total,
-        totalQuantity
+        totalQuantity,
+        displayProducts,
+        setDisplayProducts
     }
 
 }
