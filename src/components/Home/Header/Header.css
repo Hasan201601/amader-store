@@ -1,0 +1,9 @@
+.link{
+    color: white;
+}
+.link:hover{
+color: grey;
+}
+.fa-user{
+    font-size: 1.2rem;
+}
